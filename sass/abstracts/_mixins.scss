@@ -1,0 +1,17 @@
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin col-x-of-y-width($x, $y) {
+  width: calc(#{$x} * ((100% - #{$gutter-horizontal} * (#{$y} - 1)) / #{$y}) + (#{$gutter-horizontal} * (#{$x} - 1)));
+}
+
+@mixin text-color-gradient($color-x, $color-y) {
+  background-image: linear-gradient(to right, $color-x, $color-y);
+  -webkit-background-clip: text;
+  color: transparent;
+}
